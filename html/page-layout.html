@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../assets/css/font-awesome.css"/>
     <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
     <link rel="stylesheet" href="../assets/css/ace.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.custom.css" />
 
     <script src="../assets/layoutit/lib/jquery/dist/jquery.min.js"></script>
     <script src="../assets/layoutit/js/jquery-ui.js"></script>
@@ -2146,22 +2147,132 @@
                                 拖动
                             </span>
                             <span class="configuration"></span>
-                            <div class="preview">表单输入框</div>
+                            <div class="preview">进度条</div>
                             <div class="view">
-								<div class="row">
-                                    <div class="col-xs-8">
-                                        <!-- #section:elements.progressbar -->
-                                        <div class="progress pos-rel" data-percent="66%">
-                                            <div class="progress-bar" style="width:66%;"></div>
-                                        </div>
-                                    </div><!-- /.col -->
-                                    <div class="col-xs-4 center">
-                                        <!-- #section:plugins/charts.easypiechart -->
-                                        <div class="easy-pie-chart percentage" data-percent="20" data-color="#D15B47" style="height: 75px; width: 75px; line-height: 74px; color: rgb(209, 91, 71);">
-                                            <span class="percent">20</span>%
-                                        <canvas height="93" width="93" style="height: 75px; width: 75px;"></canvas></div>
-                                    </div><!-- /.col -->
+                                <div class="progress pos-rel" data-percent="66%">
+                                    <div class="progress-bar" style="width:66%;"></div>
                                 </div>
+                                <div class="chart easy-pie-chart percentage" data-percent="20" data-color="#D15B47">
+                                    <span class="percent">20</span>%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">划过泡泡</div>
+                            <div class="view">
+                                <span class="btn btn-sm" data-rel="tooltip" title="Default">Default</span>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">点击泡泡</div>
+                            <div class="view">
+                                <span class="btn btn-sm" data-rel="popover" title="Default" data-content="Heads up! This alert needs your attention, but it's not super important.">Default</span>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">自动消失提示牌</div>
+                            <div class="view">
+                                <button class="btn" id="gritter-regular">Regular</button>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">模态框</div>
+                            <div class="view">
+                                <button class="btn" id="bootbox-regular">Regular Dialog</button>
+                            </div>
+                        </div>
+                         <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">spinner</div>
+                            <div class="view">
+                                <div class="pull-right center spinner-preview"></div>
+                                <form class="form-horizontal" id="spinner-opts">
+                                    <!-- #section:plugins/jquery.slider -->
+                                    <label class="inline">
+                                        <small class="lighter">Lines:</small>
+                                        <input class="hidden" type="text" name="lines" data-min="5" data-max="16" data-step="2" value="12" />
+                                    </label>
+                                    <div class="space-0"></div>
+                                    <label class="inline">
+                                        <small class="lighter">Length:</small>
+                                        <input class="hidden" type="text" name="length" data-min="0" data-max="30" value="7" />
+                                    </label>
+                                    <div class="space-0"></div>
+                                    <label class="inline">
+                                        <small class="lighter">Width:</small>
+                                        <input class="hidden" type="text" name="width" data-min="2" data-max="20" value="4" />
+                                    </label>
+                                    <div class="space-0"></div>
+                                    <label class="inline">
+                                        <small class="lighter">Radius:</small>
+                                        <input class="hidden" type="text" name="radius" data-min="0" data-max="40" value="10" />
+                                    </label>
+                                    <div class="space-0"></div>
+                                    <label class="inline">
+                                        <small class="lighter">Corners:</small>
+                                        <input class="hidden" type="text" name="corners" data-min="0" data-max="1" data-step="0.1" value="1" />
+                                    </label>
+                                    <div class="space-0"></div>
+                                    <label class="inline">
+                                        <small class="lighter">Rotate:</small>
+                                        <input class="hidden" type="text" name="rotate" data-min="0" data-max="90" value="0" />
+                                    </label>
+                                    <div class="space-0"></div>
+                                    <label class="inline">
+                                        <small class="lighter">Trail:</small>
+                                        <input class="hidden" type="text" name="trail" data-min="10" data-max="100" value="60" />
+                                    </label>
+                                    <div class="space-0"></div>
+                                    <label class="inline">
+                                        <small class="lighter">Speed:</small>
+                                        <input class="hidden" type="text" name="speed" data-min="0.5" data-max="2.2" data-step="0.1" value="1" />
+                                    </label>
+                                    <!-- /section:plugins/jquery.slider -->
+                                </form>
                             </div>
                         </div>
                     </li>
@@ -2206,8 +2317,10 @@
         <!-- /.modal-content -->
     </div>
 </div>
-
 </div>
+<script src="../assets/js/ace/ace.js"></script>
+<script src="../assets/js/spin.js"></script>
+<script src="../assets/js/bootbox.js"></script>
 <script src="../assets/js/jquery.easypiechart.js"></script>
 <script src="../assets/layoutit/js/scripts.js"></script>
 </body>
