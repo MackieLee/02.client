@@ -19,6 +19,23 @@
     <script src="../assets/js/bootstrap.js"></script>
     <script src="../assets/js/ace-extra.js"></script>
     <style>
+        /* some elements used in demo only */
+        .spinner-preview {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .dropdown-preview {
+            margin: 0 5px;
+            display: inline-block;
+        }
+        .dropdown-preview  > .dropdown-menu {
+            display: block;
+            position: static;
+            margin-bottom: 5px;
+        }
         .green{
             color: #69aa46;
         }
@@ -1885,7 +1902,6 @@
                             <div class="view">
                             <!-- #myTabs 导致bootstrap交互失效！！！-->
                                 <div class="tabbable myTabs">
-                                    <!-- Only required for left/right tabs -->
                                     <ul class="nav nav-tabs">
                                         <li class="active">
                                             <a href="#tab1" data-toggle="tab" contenteditable="true">
@@ -2063,7 +2079,7 @@
                             <div class="view">
 								<div>
 								    <h3 class="row header smaller lighter blue">
-								        <span class="col-xs-6"> Accordion </span><!-- /.col -->
+								        <span class="col-xs-6"> Accordion </span>
 								        <span class="col-xs-6">
 											<span class="pull-right inline">
 												<span class="grey smaller-80 bolder">style:</span>
@@ -2217,7 +2233,7 @@
                                 <button class="btn" id="bootbox-regular">Regular Dialog</button>
                             </div>
                         </div>
-                         <div class="box box-element ui-draggable">
+                        <div class="box box-element ui-draggable">
                             <a href="#close" class="remove label label-danger">
                                 <i class="glyphicon glyphicon-remove"></i>
                                 删除
@@ -2231,7 +2247,6 @@
                             <div class="view">
                                 <div class="pull-right center spinner-preview"></div>
                                 <form class="form-horizontal" id="spinner-opts">
-                                    <!-- #section:plugins/jquery.slider -->
                                     <label class="inline">
                                         <small class="lighter">Lines:</small>
                                         <input class="hidden" type="text" name="lines" data-min="5" data-max="16" data-step="2" value="12" />
@@ -2273,6 +2288,251 @@
                                     </label>
                                     <!-- /section:plugins/jquery.slider -->
                                 </form>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">警告框</div>
+                            <div class="view">
+                                <div class="alert alert-danger">
+                                    <button type="button" class="close" data-dismiss="alert">
+                                        <i class="ace-icon fa fa-times"></i>
+                                    </button>
+                                    <strong>
+                                        <i class="ace-icon fa fa-times"></i>
+                                        Oh snap!
+                                    </strong>
+                                    Change a few things up and try submitting again.
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">下拉菜单</div>
+                            <div class="view">
+                                <div class="dropdown dropdown-preview">
+                                    <ul class="dropdown-menu dropdown-danger">
+                                        <li>
+                                            <a href="#" tabindex="-1">Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" tabindex="-1">Another action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" tabindex="-1">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li class="dropdown-hover">
+                                            <a href="#" tabindex="-1" class="clearfix">
+                                                <span class="pull-left">More options</span>
+
+                                                <i class="ace-icon fa fa-caret-right pull-right"></i>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-danger">
+                                                <li>
+                                                    <a href="#" tabindex="-1">Second level link</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" tabindex="-1">Second level link</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" tabindex="-1">Second level link</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" tabindex="-1">Second level link</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" tabindex="-1">Second level link</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">模态框</div>
+                            <div class="view">
+                                <h3 id="id-pills-stacked" class="row header smaller lighter blue">
+                                    <span class="col-sm-7">
+                                        <i class="ace-icon fa fa-th-large"></i>
+                                        折叠导航栏
+                                    </span>
+                                    <span class="col-sm-5">
+                                        <label class="pull-right inline">
+                                            <small class="muted">Stacked:</small>
+                                            <input checked="" type="checkbox" class="pills-stacked ace ace-switch ace-switch-5" />
+                                            <span class="lbl middle"></span>
+                                        </label>
+                                    </span>
+                                </h3>
+                                <ul class="nav nav-pills">
+                                    <li class="active">
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li class="disabled">
+                                        <a href="#">Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Messages</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">按钮</div>
+                            <div class="view">
+                                <button class="btn">Default </button>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">按钮组</div>
+                            <div class="view">
+                                <div class="btn-group">
+                                    <button class="btn btn-light">1</button>
+                                    <button class="btn btn-light">2</button>
+                                    <button class="btn btn-light">3</button>
+                                    <button class="btn btn-light">4</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">标签和标记</div>
+                            <div class="view">
+                                <span class="label">Default</span>
+                                <span class="badge">1</span>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">页码导航</div>
+                            <div class="view">
+                                <ul class="pagination">
+                                    <li class="disabled">
+                                        <a href="#">
+                                            <i class="ace-icon fa fa-angle-double-left"></i>
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ace-icon fa fa-angle-double-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">数据树-1-</div>
+                            <div class="view">
+                                <div>
+                                    <div class="padding-8">
+                                       <ul id="tree1"></ul> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box-element ui-draggable">
+                            <a href="#close" class="remove label label-danger">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                删除
+                            </a>
+                            <span class="drag label label-default">
+                                <i class="glyphicon glyphicon-move"></i>
+                                拖动
+                            </span>
+                            <span class="configuration"></span>
+                            <div class="preview">数据树-2-</div>
+                            <div class="view">
+                                <div>
+                                    <div class="padding-8">
+                                        <ul id="tree2"></ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -2318,8 +2578,10 @@
     </div>
 </div>
 </div>
+<script src="../assets/js/fuelux/fuelux.tree.js"></script>
 <script src="../assets/js/ace/ace.js"></script>
 <script src="../assets/js/spin.js"></script>
+<script src="../assets/js/ace/elements.treeview.js"></script>
 <script src="../assets/js/bootbox.js"></script>
 <script src="../assets/js/jquery.easypiechart.js"></script>
 <script src="../assets/layoutit/js/scripts.js"></script>
