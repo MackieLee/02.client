@@ -184,6 +184,76 @@ var _handles = {
 			'selected-icon' : null,
 			'unselected-icon' : null
 		});
+	},
+	// 日历------------
+	_datepicker : function(){
+		var e = $('.demo #datepicker');
+		var t = randomNumber.randomNum(1, 1e6);
+		var n = "date-picker-" + t;
+		e.attr("id", n);
+		e.datepicker({
+			showOtherMonths: true,
+			selectOtherMonths: false,
+		});
+	},
+	// 模态对话框---------
+	_handleDialog : function(){
+		var e1 = $('.demo #id-btn-dialog1'),
+			e2 = $('.demo #id-btn-dialog2'),
+			t = randomNumber.randomNum(1, 1e6);
+		e1.attr("id", "date-picker1-" + t);
+		e2.attr("id", "date-picker2-" + t);
+		e1.on('click', function(e) {
+			e.preventDefault();
+			var dialog = e1.parent().find("#dialog-message").removeClass('hide').dialog({
+				modal: true,
+				title: "<div class='widget-header widget-header-small'><h4 class='smaller'><i class='ace-icon fa fa-check'></i> jQuery UI Dialog</h4></div>",
+				title_html: true,
+				buttons: [ 
+					{
+						text: "Cancel",
+						"class" : "btn btn-xs",
+						click: function() {
+							$( this ).dialog( "close" ); 
+						} 
+					},
+					{
+						text: "OK",
+						"class" : "btn btn-primary btn-xs",
+						click: function() {
+							$( this ).dialog( "close" ); 
+						} 
+					}
+				]
+			});
+		});
+		e2.on('click', function(e) {
+			e.preventDefault();
+			e2.parent().find("#dialog-confirm")
+			.removeClass('hide').dialog({
+				resizable: false,
+				modal: true,
+				title: "<div class='widget-header'><h4 class='smaller'><i class='ace-icon fa fa-exclamation-triangle red'></i> Empty the recycle bin?</h4></div>",
+				title_html: true,
+				buttons: [
+					{
+						html: "<i class='ace-icon fa fa-trash-o bigger-110'></i>&nbsp; Delete all items",
+						"class" : "btn btn-danger btn-xs",
+						click: function() {
+							$( this ).dialog( "close" );
+						}
+					}
+					,
+					{
+						html: "<i class='ace-icon fa fa-times bigger-110'></i>&nbsp; Cancel",
+						"class" : "btn btn-xs",
+						click: function() {
+							$( this ).dialog( "close" );
+						}
+					}
+				]
+			});
+		});
 	}
 }
 //方法调用全都在这儿！
@@ -196,6 +266,8 @@ function handleJsIds() {
 	_handles._handleSpinners();
 	_handles._handlePills();
 	_handles._handleDataTree();
+	_handles._datepicker();
+	_handles._handleDialog();
 }
 //清除类
 var _rm = {
@@ -278,6 +350,7 @@ $(function () {
 		console.log($("input",event.target));
 	});
 });
+// fuelux tree 数据-------------
 function initiateDemoData(){
 	// 数据---1------
 	var tree_data = {

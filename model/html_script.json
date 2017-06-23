@@ -1,0 +1,21 @@
+{
+	"head":[
+		{"src":"/assets/js/ace-extra.js", "type":"text/javascript"},
+		{"src":"/assets/js/html5shiv.js", "type":"text/javascript"},
+		{"src":"/assets/js/respond.js", "type":"text/javascript"},
+		{"src":"/common/loadStyle.js", "type":"text/javascript"},
+		{"src":"/common/common.js", "type":"text/javascript"},
+		{"src":"/assets/js/jquery.mobile.custom.js", "type":"text/javascript"},
+		{"src":"/assets/js/bootstrap.js", "type":"text/javascript"},
+		{"src":"/assets/js/excanvas.js", "type":"text/javascript"},
+		{"src":"/assets/js/jquery-ui.custom.js", "type":"text/javascript"},
+		{"src":"/assets/js/ace/elements.scroller.js", "type":"text/javascript"},
+		{"src":"/assets/js/ace/elements.colorpicker.js", "type":"text/javascript"},
+		{"src":"/assets/js/ace/elements.fileinput.js", "type":"text/javascript"},
+		{"src":"/assets/js/ace/elements.typeahead.js", "type":"text/javascript"},
+		{"src":"/assets/js/ace/elements.wysiwyg.js", "type":"text/javascript"},
+		{"src":"/assets/js/ace/elements.spinner.js", "type":"text/javascript"}
+	],
+	"body":[]
+}
+

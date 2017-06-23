@@ -9,26 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
     <!-- bootstrap & fontawesome -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../assets/css/font-awesome.css"/>
-
     <!-- page specific plugin styles -->
 
     <!-- text fonts -->
-    <link rel="stylesheet" href="../assets/css/ace-fonts.css"/>
     <!-- 特别注意的地方！！！ -->
-    <link rel="stylesheet" href="../assets/easyui/css/easyui.css"/>
-    <link rel="stylesheet" href="../assets/easyui/themes/icon.css"/>
 
     <!-- ace styles -->
-    <link rel="stylesheet" href="../assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style"/>
 
     <!--[if lte IE 9]>
-    <link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet"/>
+
     <![endif]-->
 
     <!--[if lte IE 9]>
-    <link rel="stylesheet" href="../assets/css/ace-ie.css"/>
     <![endif]-->
 
     <!-- inline styles related to this page -->
@@ -267,10 +259,10 @@
                                 <li>
                                     <a href="#" class="clearfix">
                                         <img src="../assets/avatars/avatar3.png" class="msg-photo"
-                                             alt="Susan's Avatar"/>
+                                             alt="Susan's "/>
                                         <span class="msg-body">
 													<span class="msg-title">
-														<span class="blue">代文海:</span>
+														Avatar<span class="blue">代文海:</span>
 														送你一个红包...
 													</span>
 
@@ -470,13 +462,6 @@
                 </a>
                 <b class="arrow"></b>
             </li>
-            <li class="">
-                <a href="dai.easyui.html">
-                    <i class="menu-icon fa fa-gear"></i>
-                    <span class="menu-text">待办任务 </span>
-                </a>
-                <b class="arrow"></b>
-            </li>
         </ul><!-- /.nav-list -->
 
         <!-- #section:basics/sidebar.layout.minimize -->
@@ -622,320 +607,75 @@
                 <!-- /section:settings.box -->
                 <div class="page-header">
                     <h1>
-                       待办任务
+                        控制面板
                         <small>
                             <i class="ace-icon fa fa-angle-double-right"></i>
-                            待办任务列表
+                            概览 &amp; 统计
                         </small>
                     </h1>
                 </div><!-- /.page-header -->
 
-                <div class="row">
-                    <div class="col-xs-12">
-
-                        <table id="dg" class="easyui-datagrid" style="height:auto"
-                               pagination="true" rownumbers="true" data-options="
-				iconCls: 'fa fa-edit',
-				singleSelect: true,
-				toolbar: '#tb',
-				url: 'daiban.json',
-				method: 'get',
-				onClickRow: onClickRow
-			">
-                            <thead>
-                            <tr>
-                                <th data-options="field:'ID',width:100">ID</th>
-                                <th data-options="field:'workType',width:100">工作类型</th>
-                                <th data-options="field:'title',width:100">标题</th>
-                                <th data-options="field:'state',width:100">状态</th>
-                                <th data-options="field:'designate',width:100">指派给</th>
-                                <th data-options="field:'designateDate',width:100">指派日期</th>
-                                <th data-options="field:'priority',width:100">优先度</th>
-                            </tr>
-                            </thead>
-                        </table>
-                        <!--重新指派开始-->
-                        <div class="input-group" style="display: none;">
-                            <span class="input-group-btn">
-                                <button id="openModal" class="btn btn-sm" data-toggle="modal"
-                                        data-target="#tar-modal">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </span>
-                        </div>
-                        <!--<div class="modal fade" id="tar-modal">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <div class="close" data-dismiss="modal">&times;</div>
-                                        <h4></h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div id="modal-collapse" class="accordion-style1 panel-group">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title">
-                                                        <a class="accordion-toggle" data-toggle="collapse"
-                                                           data-parent="#modal-collapse"
-                                                           href="#collapse01">
-                                                            <i class="ace-icon fa fa-angle-down bigger-110"
-                                                               data-icon-hide="ace-icon fa fa-angle-down"
-                                                               data-icon-show="ace-icon fa fa-angle-right"></i>
-                                                            列表信息
-                                                        </a>
-                                                    </h4>
-                                                </div>
-                                                <div class="panel-collapse collapse in" id="collapse01">
-                                                    <div class="panel-body">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title">
-                                                        <a class="accordion-toggle collapsed" data-toggle="collapse"
-                                                           data-parent="#modal-collapse" href="#collapse02">
-                                                            <i class="ace-icon fa fa-angle-right bigger-110"
-                                                               data-icon-hide="ace-icon fa fa-angle-down"
-                                                               data-icon-show="ace-icon fa fa-angle-right"></i>
-                                                            已选择数据
-                                                        </a>
-                                                    </h4>
-                                                </div>
-                                                <div class="panel-collapse collapse" id="collapse02">
-                                                    <div class="panel-body">
-                                                        <table class="table table-hover table-condensed table-bordered">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>
-                                                                    ID
-                                                                </th>
-                                                                <th>
-                                                                    工作类型
-                                                                </th>
-                                                                <th>
-                                                                    标题
-                                                                </th>
-                                                                <th>
-                                                                    状态
-                                                                </th>
-                                                                <th>
-                                                                    指派给
-                                                                </th>
-                                                                <th>
-                                                                    指派日期
-                                                                </th>
-                                                                <th>
-                                                                    优先度
-                                                                </th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    1
-                                                                </td>
-                                                                <td>
-                                                                    TB - Monthly
-                                                                </td>
-                                                                <td>
-                                                                    01/04/2012
-                                                                </td>
-                                                                <td>
-                                                                    Default
-                                                                </td>
-                                                                <td>
-                                                                    TB - Monthly
-                                                                </td>
-                                                                <td>
-                                                                    01/04/2012
-                                                                </td>
-                                                                <td>
-                                                                    Default
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="success">
-                                                                <td>
-                                                                    1
-                                                                </td>
-                                                                <td>
-                                                                    TB - Monthly
-                                                                </td>
-                                                                <td>
-                                                                    01/04/2012
-                                                                </td>
-                                                                <td>
-                                                                    Approved
-                                                                </td>
-                                                                <td>
-                                                                    TB - Monthly
-                                                                </td>
-                                                                <td>
-                                                                    01/04/2012
-                                                                </td>
-                                                                <td>
-                                                                    Default
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="error">
-                                                                <td>
-                                                                    2
-                                                                </td>
-                                                                <td>
-                                                                    TB - Monthly
-                                                                </td>
-                                                                <td>
-                                                                    02/04/2012
-                                                                </td>
-                                                                <td>
-                                                                    Declined
-                                                                </td>
-                                                                <td>
-                                                                    TB - Monthly
-                                                                </td>
-                                                                <td>
-                                                                    01/04/2012
-                                                                </td>
-                                                                <td>
-                                                                    Default
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="warning">
-                                                                <td>
-                                                                    3
-                                                                </td>
-                                                                <td>
-                                                                    TB - Monthly
-                                                                </td>
-                                                                <td>
-                                                                    03/04/2012
-                                                                </td>
-                                                                <td>
-                                                                    Pending
-                                                                </td>
-                                                                <td>
-                                                                    TB - Monthly
-                                                                </td>
-                                                                <td>
-                                                                    01/04/2012
-                                                                </td>
-                                                                <td>
-                                                                    Default
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="info">
-                                                                <td>
-                                                                    4
-                                                                </td>
-                                                                <td>
-                                                                    TB - Monthly
-                                                                </td>
-                                                                <td>
-                                                                    04/04/2012
-                                                                </td>
-                                                                <td>
-                                                                    Call in to confirm
-                                                                </td>
-                                                                <td>
-                                                                    TB - Monthly
-                                                                </td>
-                                                                <td>
-                                                                    01/04/2012
-                                                                </td>
-                                                                <td>
-                                                                    Default
-                                                                </td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button class="btn btn-primary">确定</button>
-                                        <button class="btn btn-danger" data-dismiss="modal">关闭</button>
-                                    </div>
-                                </div>
+                <div style="margin:20px 0;"></div>
+                    <div class="easyui-panel" title="New Topic" style="width:100%;max-width:400px;padding:30px 60px;">
+                        <form id="task" method="post">
+                            <div style="margin-bottom:20px">
+                                <label for="ID">ID：</label>
+                                <input type="text" id="identifier" name="identifier" class="easyui-textbox" style="width:100%"/>
                             </div>
-                        </div>-->
-                        <div class="modal fade" id="tar-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title" id="myModalLabel">更改指派人</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <!--<p>当爱情来得过于汹涌，我们该如何抉择？</p><p>当情感在时间的浪潮里激情得澎湃，我们又该何去何从？</p><p>“不死鸟，不死鸟。”有太多的东西徘徊在我们的周身，或激情或萧条，我们又该怎么权衡？</p><p>《不死鸟》，也许这里有你曾经经历过的点点滴滴，也许有你即将经历的枝枝叶叶。</p><p>然而在某些东西面前，爱情又是那么的脆弱......</p>-->
-                                       <!-- <table class="table table-bordered">
-                                            <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>工作类型</th>
-                                                <th>标题</th>
-                                                <th>状态</th>
-                                                <th>指派给</th>
-                                                <th>指派日期</th>
-                                                <th>优先度</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>0001</td>
-                                                <td>BUG</td>
-                                                <td>显示文本内容</td>
-                                                <td>处理中</td>
-                                                <td>张三</td>
-                                                <td>2016-12-01</td>
-                                                <td>高</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>-->
-                                       <!-- <select id="usertype" name="usertype" class="selectpicker show-tick form-control" multiple data-live-search="false">
-                                            <option value="0">苹果</option>
-                                            <option value="1">菠萝</option>
-                                            <option value="2">香蕉</option>
-                                            <option value="3">火龙果</option>
-                                            <option value="4">梨子</option>
-                                            <option value="5">草莓</option>
-                                            <option value="6">哈密瓜</option>
-                                            <option value="7">椰子</option>
-                                            <option value="8">猕猴桃</option>
-                                            <option value="9">桃子</option>
-                                        </select>-->
-                                        <form role="form">
-                                            <div class="form-group">
-                                                <label for="name">选择指派人</label>
-                                                <select class="form-control">
-                                                    <option>李二</option>
-                                                    <option>张三</option>
-                                                    <option>李四</option>
-                                                    <option>王五</option>
-                                                    <option>赵六</option>
-                                                </select>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button class="btn btn-primary">确定</button>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                    </div>
-                                </div><!-- /.modal-content -->
-                            </div><!-- /.modal -->
-                        </div>
-                        <!--重新指派结束-->
-                        <div id="tb" style="height:auto">
-                            <a href="javascript:void(0)" class="easyui-linkbutton"
-                               data-options="iconCls:'fa icon-help',plain:true" onclick="accept()">正在处理</a>
-                            <a href="javascript:void(0)" class="easyui-linkbutton"
-                               data-options="iconCls:'fa icon-help',plain:true" onclick="reject()">重新指派</a>
-                            <a href="javascript:void(0)" class="easyui-linkbutton"
-                               data-options="iconCls:'fa icon-help',plain:true" onclick="getChanges()">完成任务</a>
-                        </div>
+                            <div style="margin-bottom:20px">
+                                <label for="工作类型">工作类型：</label>
+                                <select id="type" class="easyui-combobox" style="width:100%" name="worktype">
+                                    <option>BUG</option>
+                                    <option>开发任务</option>
+                                </select>
+                            </div>
+                            <div style="margin-bottom:20px">
+                                <label for="标题">标题：</label>
+                                <input type="text" id="title" name="title" class="easyui-textbox" style="width:100%"/>
+                            </div>
+                            <div style="margin-bottom:20px">
+                                <label for="状态">状态：</label>
+                                <select id="status" class="easyui-combobox" style="width:100%" disabled="true" name="status">
+                                    <option>新建</option>
+                                    <option>未解决</option>
+                                    <option>处理中</option>
+                                    <option>已完成</option>
+                                    <option>已关闭</option>
+                                </select>
+                            </div>
+                            <div style="margin-bottom:20px">
+                                <label for="指派给">指派给：</label>
+                                <select id="" name="" class="easyui-combogrid" style="width:100%" data-options="
+                                panelWidth:450,
+                                idField:'no',
+                                textField:'name',
+                                url:'datagrid_emp.json',
+                                method:'get',
+                                columns:[[
+                                    {field:'no',title:'编号',width:100},
+                                    {field:'name',title:'姓名',width:150},
+                                    {field:'dept',title:'部门',width:150}
+                                ]]
+                            "></select>
+                            </div>
+                            <div style="margin-bottom:20px">
+                                <label for="指派日期">指派日期：</label>
+                                <input type="text" id="date" name="byDate" class="easyui-datebox" style="width:100%" required="required"/>
+                            </div>
+                            <div style="margin-bottom:20px">
+                                <label for="优先度">优先度：</label>
+                                <select id="priority" class="easyui-combobox" style="width:100%" name="priority">
+                                    <option>低</option>
+                                    <option>中</option>
+                                    <option>高</option>
+                                </select>
+                            </div>
+                            <div style="text-align:center;padding:5px 0">
+                                <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()" style="width:80px">Submit</a>
+                                <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()" style="width:80px">Clear</a>
+                            </div>
+                        </form>
                     </div>
-                </div><!-- /.row -->
             </div><!-- /.page-content -->
         </div>
     </div><!-- /.main-content -->
@@ -981,7 +721,7 @@
 
 
 </script>
-
+<script src="../common/loadStyle.js"></script>
 <!-- <![endif]-->
 
 <!--[if IE]>
@@ -1094,63 +834,33 @@
         }
     }
     function onClickRow(index) {
-
-
+        if (editIndex != index) {
+            if (endEditing()) {
+                $('#dg').datagrid('selectRow', index)
+                    .datagrid('beginEdit', index);
+                editIndex = index;
+            } else {
+                $('#dg').datagrid('selectRow', editIndex);
+            }
+        }
     }
-    //正在处理
     function accept() {
-        var rows = $('#dg').datagrid('getSelections');//当左键单击的时候，选出所有的选中行
-        var rowIndex = $('#dg').datagrid('getRowIndex', $('#dg').datagrid('getSelected')) + 1;//获取选中行的索引
-        if (rows.length == 1) {
-            // alert(rows[0].ID+"这是选中行的ID！！！");
-            // alert(rowIndex+"这是选中行的序号！！！");
-            // alert("选中了第"+rowIndex+"行，点击正在处理按钮，状态改为已处理！！！");
-            $.messager.alert('信息', '选中了第' + rowIndex + '行，点击正在处理按钮，状态改为已处理！！！', 'info');
-        } else {
-            $.messager.alert('提示', '请选择一条记录！', 'warning');
+        if (endEditing()) {
+            $('#dg').datagrid('acceptChanges');
         }
-
     }
-    //重新指派
     function reject() {
-        var rows = $('#dg').datagrid('getSelections');
-        if (rows.length == 1) {
-            $('#openModal').click();
-        } else {
-            $.messager.alert('提示', '请选择一条记录！', 'warning');
-        }
+        $('#dg').datagrid('rejectChanges');
+        editIndex = undefined;
     }
-    //完成任务
     function getChanges() {
-        var rows = $('#dg').datagrid('getSelections');
-        if (rows.length == 1) {
-            $.messager.alert('提示', '已完成！！！', 'info');
-        } else {
-            $.messager.alert('提示', '请选择一条记录！', 'warning');
-        }
+        var rows = $('#dg').datagrid('getChanges');
+        alert(rows.length + ' rows are changed!');
     }
-    //设置分页
-    $(function () {
-        var p = $('#dg').datagrid('getPager');
-        $(p).pagination({
-            pageSize: 10,//每页显示的记录条数，默认为10
-            pageList: [10, 20, 30],//可以设置每页记录条数的列表
-            beforePageText: '第',//页数文本框前显示的汉字
-            afterPageText: '页    共 {pages} 页',
-            displayMsg: '当前显示 {from}-{to} 条记录,共 {total} 条记录',
-            /*onSelectPage: function(pageNumber, pageSize){
-             alert('onSelectPage pageNumber:' + pageNumber + ',pageSize:' + pageSize);
-             $('#dg').panel('refresh', 'show_content.php?page='+pageNumber);
-             }*/
-        });
-    });
 </script>
 
 
 <!-- the following scripts are used in demo only for onpage help and you don't need them -->
-<link rel="stylesheet" href="../assets/css/ace.onpage-help.css"/>
-<link rel="stylesheet" href="../docs/assets/js/themes/sunburst.css"/>
-
 <script type="text/javascript"> ace.vars['base'] = '..'; </script>
 <script src="../assets/js/ace/elements.onpage-help.js"></script>
 <script src="../assets/js/ace/ace.onpage-help.js"></script>

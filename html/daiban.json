@@ -1,0 +1,19 @@
+{
+  "total":100,
+    "rows":[
+              {"ID":"0001","workType":"BUG","title":"显示文本内容","state":"新建","designate":"张三","designateDate":"2015-11-04","priority":"低"},
+              {"ID":"0002","workType":"开发任务","title":"显示文本内容","state":"处理中","designate":"李四","designateDate":"2015-11-04","priority":"中"},
+              {"ID":"0003","workType":"BUG","title":"显示文本内容","state":"已完成","designate":"王二","designateDate":"2015-11-04","priority":"高"},
+              {"ID":"0004","workType":"开发任务","title":"显示文本内容","state":"未解决","designate":"刘五","designateDate":"2015-11-04","priority":"低"},
+              {"ID":"0005","workType":"BUG","title":"显示文本内容","state":"已关闭","designate":"杰瑞","designateDate":"2015-11-04","priority":"中"},
+              {"ID":"0006","workType":"开发任务","title":"显示文本内容","state":"处理中","designate":"汤姆","designateDate":"2015-11-04","priority":"高"},
+              {"ID":"0007","workType":"BUG","title":"显示文本内容","state":"已完成","designate":"爱丽丝","designateDate":"2015-11-04","priority":"低"},
+              {"ID":"0008","workType":"BUG","title":"显示文本内容","state":"新建","designate":"张三","designateDate":"2015-11-04","priority":"低"},
+              {"ID":"0009","workType":"开发任务","title":"显示文本内容","state":"处理中","designate":"李四","designateDate":"2015-11-04","priority":"中"},
+              {"ID":"0010","workType":"BUG","title":"显示文本内容","state":"已完成","designate":"王二","designateDate":"2015-11-04","priority":"高"},
+              {"ID":"0011","workType":"开发任务","title":"显示文本内容","state":"未解决","designate":"刘五","designateDate":"2015-11-04","priority":"低"},
+              {"ID":"0012","workType":"BUG","title":"显示文本内容","state":"已关闭","designate":"杰瑞","designateDate":"2015-11-04","priority":"中"},
+              {"ID":"0013","workType":"开发任务","title":"显示文本内容","state":"处理中","designate":"汤姆","designateDate":"2015-11-04","priority":"高"},
+              {"ID":"0014","workType":"BUG","title":"显示文本内容","state":"已完成","designate":"爱丽丝","designateDate":"2015-11-04","priority":"低"}
+    ]
+}
